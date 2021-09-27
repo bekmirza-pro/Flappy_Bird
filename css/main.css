@@ -41,6 +41,58 @@ body {
     background-color: green;
 }
 
+.modal_inner {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    color: rgb(255, 187, 0);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal_active {
+    display: flex;
+}
+
+.modal_inner {
+    width: 100%;
+    max-width: 200px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 8px green;
+}
+
+.modal_desciription {
+    text-align: center;
+    font-size: 40px;
+}
+
+.modal_restart-btn {
+    padding: 8px 30px;
+    font-size: 16px;
+    background-color: green;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
 @media only screen and (max-width: 700px) {
     .bird_img {
         display: none;

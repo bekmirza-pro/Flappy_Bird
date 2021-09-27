@@ -2,6 +2,14 @@ var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 var elBtn = document.querySelector(".button")
 
+
+const makeElament = (selector, parent = document) => parent.querySelector(selector);
+const createDOM = (element) => document.createElement(element);
+
+const elModalInfo = makeElament('.modal');
+const elRestartModalBtn = makeElament('.modal_restart-btn');
+
+
 var bird = new Image();
 var bg = new Image();
 var fg = new Image();
@@ -71,7 +79,7 @@ function draw() {
             xPos <= pipe[i].x + pipeUp.width &&
             (yPos <= pipe[i].y + pipeUp.height ||
                 yPos + bird.height >= pipe[i].y + pipeUp.height + gap) || yPos + bird.height >= cvs.height - fg.height) {
-            location.reload();
+            elModalInfo.classList.add('modal_active');
         }
 
         if (pipe[i].x == 5) {
@@ -93,3 +101,11 @@ function draw() {
 }
 
 pipeBottom.onload = draw;
+
+
+elRestartModalBtn.addEventListener('click', (evt) => {
+    elModalInfo.classList.remove('modal_active');
+    // evt.preventDefault();
+    location.reload()
+        // console.log(elModalInfo);
+})
