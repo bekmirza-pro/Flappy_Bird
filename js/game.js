@@ -1,6 +1,6 @@
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
-
+var elBtn = document.querySelector(".button")
 
 var bird = new Image();
 var bg = new Image();
@@ -26,6 +26,10 @@ score_audio.src = "audio/score.mp3";
 var gap = 90;
 
 document.addEventListener("keydown", moveUp);
+elBtn.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    moveUp();
+})
 
 function moveUp() {
     yPos -= 25;
